@@ -189,7 +189,7 @@ function audior($commentField) {
 	if ($userPermissions[0]->enable_audior == 0) { return $commentField; }
 	
 	//check if audior exists
-	if (!file_exists(dirname(__FILE__) . '/audior/Audior.swf')) { return $commentField . '<div class="audior-comments-wrapper"><label class="audior-label">Record audio comment</label><p>For the plugin to work, you need the Audior files to be copied to the plugin directory! You can buy it from <a href="http://audior.ec/order" title="Buy Audior" onclick="window.open(this.href); return false;">audior.ec</a> or review the <a href="http://audior.ec/support" title="Audior documentation" onclick="window.open(this.href); return false;">Documentation!</a></p></div>'; }
+	if (!file_exists(dirname(__FILE__) . '/audior/Audior.swf')) { return $commentField . '<div class="audior-comments-wrapper"><label class="audior-label">Record audio comment</label><p>For the plugin to work, you need the Audior files to be copied to the plugin directory! You can buy it from <a href="http://audior.ec/order" title="Buy Audior" onclick="window.open(this.href); return false;">audior.ec</a> or review the <a href="http://wordpress.org/plugins/audio-comments/installation/" title="Audior documentation" onclick="window.open(this.href); return false;">Documentation!</a></p></div>'; }
 	
 	//html for select
 	//$htmlSelect .= 'here we will show a select';
