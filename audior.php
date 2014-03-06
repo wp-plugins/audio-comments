@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: Audio Comments for WordPress
-Plugin URI: http://www.audior.ec
-Description: <a href='http://audior.ec' onclick="window.open(this.href,"_blank");return false;" target="_blank" title='Record mp3 in browser'>Audior is a simple mp3 recording tool for the web</a> that can record your microphone, encode the sound to MP3, and save it to your computer or upload it to a web server. Audior is developed in Flash and works from any browser. For a complete list of features check out the <a href='http://audior.ec/features' target="_blank" title='Audior Features'>Audior features page</a>. For pricing check out the <a href='http://audior.ec/order' title='Audior Pricing Page' onclick="window.open(this.href,"_blank");return false;" target="_blank">Audior pricing page</a>.
+Plugin URI: http://wordpress.org/plugins/audio-comments/
+Description: The Audio Comments Plugin for WordPress adds audio comments to your WordPress content by integrating <a href="http://www.audior.ec" onclick="window.open(this.href,"_blank");return false;" target="_blank" title="Audior">Audior</a> - a powerful mp3 web recording solution.
 Author: NusoftHQ
 Version: 1.0
 Author URI: http://www.nusofthq.com
