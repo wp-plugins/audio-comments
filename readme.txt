@@ -10,7 +10,7 @@ License: GPLv2 or later
 The Audio Comments Plugin for WordPress adds audio comments to your WordPress content by integrating Audior - a powerful mp3 web recording solution.
 
 == Description ==
-<a href='http://audior.ec' onclick="window.open(this.href,"_blank");return false;" target="_blank" title='Record mp3 in browser'>Audior is a simple mp3 recording tool for the web</a> that can record your microphone, encode the sound to MP3, and save it to your computer or upload it to a web server. Audior is developed in Flash and works from any browser. For a complete list of features check out the <a href='http://audior.ec/features' target="_blank" title='Audior Features'>Audior features page</a>. For pricing check out the <a href='http://audior.ec/order' title='Audior Pricing Page' onclick="window.open(this.href,"_blank");return false;" target="_blank">Audior pricing page</a>.
+<a href='http://audior.ec#wp' onclick="window.open(this.href,"_blank");return false;" target="_blank" title='Record mp3 in browser'>Audior is a simple mp3 recording tool for the web</a> that can record your microphone, encode the sound to MP3, and save it to your computer or upload it to a web server. Audior is developed in Flash and works from any browser. For a complete list of features check out the <a href='http://audior.ec/features#wp' target="_blank" title='Audior Features'>Audior features page</a>. For pricing check out the <a href='http://audior.ec/order#wp' title='Audior Pricing Page' onclick="window.open(this.href,"_blank");return false;" target="_blank">Audior pricing page</a>.
 
 With this plugin you will be able to leverage Audior to:
 
@@ -30,7 +30,7 @@ Other features include :
 
 
 == Installation ==
-For this plugin to work, **you first need to purchase the Audior mp3 web recording software** from <a href='http://audior.ec' title='Purchase Audior'>here</a>. This plugin only takes care of the integration between WordPress and the Audior web software. It does not contain the actual Audior.
+For this plugin to work, **you first need to purchase the Audior mp3 web recording software** from <a href='http://audior.ec#wp' title='Purchase Audior'>here</a>. This plugin only takes care of the integration between WordPress and the Audior web software. It does not contain the actual Audior.
 
 Once you purchase Audior from audior.ec website, follow these steps:
 
