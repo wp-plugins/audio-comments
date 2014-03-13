@@ -2,7 +2,7 @@
 /*
 Plugin Name: Audio Comments for WordPress
 Plugin URI: http://wordpress.org/plugins/audio-comments/
-Description: The Audio Comments Plugin for WordPress adds audio comments to your WordPress content by integrating <a href="http://www.audior.ec" onclick="window.open(this.href,"_blank");return false;" target="_blank" title="Audior">Audior</a> - a powerful mp3 web recording solution.
+Description: The Audio Comments Plugin for WordPress adds audio comments to your WordPress content by integrating <a href="http://www.audior.ec#wppd" onclick="window.open(this.href,"_blank");return false;" target="_blank" title="Audior">Audior</a> - a powerful mp3 web recording solution.
 Author: NusoftHQ
 Version: 1.0
 Author URI: http://www.nusofthq.com
