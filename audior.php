@@ -234,29 +234,52 @@ function audior($commentField) {
 EOF;
 	$html .= 'var logged = ' . $logged . ';';
 	$html .=  <<<EOF
-	window.onload = function() {
-		document.getElementById("submit").onclick = function() {
+	(function($) {
+ 		$(document).on('click', '#commentform .form-submit input[type="submit"]', function() {
+ 			if (logged == 0) {
+  				var author = document.getElementById('author').value;
+  				if (author == '') { alert('Please complete the author field!'); return false; }
 			
-			if (logged == 0) {
-				var author = document.getElementById('author').value;
-				if (author == '') { alert('Please complete the author field!'); return false; }
-			
-				var email = document.getElementById('email').value;
-				if (!validateEmail(email)) { alert('Please complete the e-mail field!'); return false; }
-			}
-		
-			var commentText = document.getElementById('comment').value;
-			if (commentText == '') { alert('Please complete the comment box'); return false; }
-			
-			if (startedRec == 0) {
+  				var email = document.getElementById('email').value;
+  				if (!validateEmail(email)) { alert('Please complete the e-mail field!'); return false; }
+  			}
+	
+ 			var commentText = document.getElementById('comment').value;
+  			if (commentText == '') { alert('Please complete the comment box'); return false; }
+
+  			if (startedRec == 0) {
 				HTMLFormElement.prototype.submit.call(document.getElementById("commentform"));
-			} else if (recording == 0) {
-				document.Audior.save();
-			} else {
-				alert('Please Stop recording before posting the comment!');
-			}
-			return false;
-		}
+  			} else if (recording == 0) {
+  				document.Audior.save();
+  			} else {
+  				alert('Please Stop recording before posting the comment!');
+  			}
+ 			return false;
+ 		});
+	})(jQuery);
+	window.onload = function() {
+		// document.getElementById("submit").onclick = function() {
+// 			
+// 			if (logged == 0) {
+// 				var author = document.getElementById('author').value;
+// 				if (author == '') { alert('Please complete the author field!'); return false; }
+// 			
+// 				var email = document.getElementById('email').value;
+// 				if (!validateEmail(email)) { alert('Please complete the e-mail field!'); return false; }
+// 			}
+// 		
+// 			var commentText = document.getElementById('comment').value;
+// 			if (commentText == '') { alert('Please complete the comment box'); return false; }
+// 			
+// 			if (startedRec == 0) {
+// 				HTMLFormElement.prototype.submit.call(document.getElementById("commentform"));
+// 			} else if (recording == 0) {
+// 				document.Audior.save();
+// 			} else {
+// 				alert('Please Stop recording before posting the comment!');
+// 			}
+// 			return false;
+// 		}
 	}
 </script>
 EOF;
