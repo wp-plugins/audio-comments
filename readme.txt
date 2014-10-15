@@ -20,7 +20,7 @@ With this plugin you will be able to leverage Audior to:
 * Control the max record limit/comment for each user role (you can change it from your WordPress admin area)
 * Change the looks, language file, sound wave and more with the 11+ Audior options exposed in the WordPress backend
 
-Other features include :
+Other features include:
 * simple install: it installs as any other WP plugin
 * compatible with SEO friendly URL's in WordPress
 * the Audior recorder colors can be changed to fit with your existing WordPress theme
