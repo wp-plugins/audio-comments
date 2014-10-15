@@ -74,11 +74,13 @@ No, at the moment, recording audio in the browser using native HTML is in it's i
 
 2. Recording an audio comment reply
 
-3. Moderating audio comments
+3. Playing an audio comment reply
 
-4. Moderating an audio comment
+4. Moderating audio comments
 
-5. Audio Comments Plugin Settings
+5. Moderating an audio comment
+
+6. Audio Comments Plugin Settings
 
 == Changelog ==
 = 1.0 (18.02.2014) =
