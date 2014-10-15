@@ -22,7 +22,7 @@ With this plugin you will be able to leverage Audior to:
 
 Other features include :
 
-* simple install: it installs as any other WP plugin
+* Simple install: it installs as any other WP plugin
 * compatible with SEO friendly URL's in WordPress
 * the Audior recorder colors can be changed to fit with your existing WordPress theme
 * the AUDIO HTML5 element is used for playback
