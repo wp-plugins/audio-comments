@@ -4,7 +4,7 @@ Plugin Name: Audio Comments for WordPress
 Plugin URI: http://wordpress.org/plugins/audio-comments/
 Description: The Audio Comments Plugin for WordPress adds audio comments to your WordPress content by integrating <a href="http://www.audior.ec#wppd" onclick="window.open(this.href,"_blank");return false;" target="_blank" title="Audior">Audior</a> - a powerful mp3 web recording solution.
 Author: NusoftHQ
-Version: 1.0
+Version: 1.1
 Author URI: http://www.nusofthq.com
 
 
@@ -22,6 +22,66 @@ along with this plugin.  If not, see <http://www.gnu.org/licenses/>.
 
 if(session_id() == "") { session_start(); }
 require_once(ABSPATH . 'wp-content/plugins/audio-comments/sql.php');
+
+function audiorShortcode($atts) {
+	$a = shortcode_atts( array(), $atts );
+
+	//get wordpress and user info
+	global $current_user;
+	global $wpdb;
+	global $blog_id;
+	get_currentuserinfo();
+
+	$flashVersion = '12.0.0.44';
+
+	$pluginPath = plugin_dir_url(__FILE__);
+	$uploadDir = wp_upload_dir();
+	$_SESSION['audior-upload-path'] = $uploadDir['basedir'] . '/audio-comments/';
+
+	$audiorSettings = $wpdb->get_results( "SELECT * FROM " . $wpdb->prefix . "audior_settings LIMIT 1 ");
+	$_SESSION['audior-settings'] = $audiorSettings[0];
+
+	$uniqID = uniqid();
+	$licenseKey= $audiorSettings[0]->license_key;
+
+	if (!file_exists(dirname(__FILE__) . '/audior/Audior.swf')) { return '<div class="audior-comments-wrapper"><label class="audior-label">Record audio comment</label><p>For the plugin to work, you need the Audior files to be copied to the plugin directory! You can buy it from <a href="http://audior.ec/order" title="Buy Audior" onclick="window.open(this.href); return false;">audior.ec</a> or review the <a href="http://wordpress.org/plugins/audio-comments/installation/" title="Audior documentation" onclick="window.open(this.href); return false;">Documentation!</a></p></div>'; }
+
+	$html .= '<script type="text/javascript" src="'.$pluginPath.'audior/swfobject.js"></script>';
+	$html .= '<script type="text/javascript" src="'.$pluginPath.'javascript/shortcode_actions.js"></script>';
+	$html .=  <<<EOF
+<script type="text/javascript">
+	var swfVersionStr = "{$flashVersion}";
+	var xiSwfUrlStr = "";
+
+	var flashvars = {};
+	flashvars.lstext="Loading..."; //you can provide a translation here for the "Laoding..." text taht shows up while this file and the external language file is loaded
+	flashvars.recorderId = "recorder_{$uniqID}"; //set this var if you have multiple instances of Audior on a page and you want to identify them
+	flashvars.userId ="user1";//this variable is sent back to upload.php when the user presses the [SAVE] button
+	flashvars.licenseKey = "{$licenseKey}"; //licensekey variable, you get it when you purchase the software
+	flashvars.sscode="php" //instructs Audior to use the PHP set of server side files (switch to sscode="aspx") to use the .NET/ASPX set of files
+	flashvars.settingsFile = "audior_settings.php" //this setting instructs Audior what setting file to load. Either the static .XML or the dynamic .PHP that generates a dynamic xml.
+
+	var params = {};
+	params.quality = "high";
+	params.bgcolor = "#ffffff";
+	params.allowscriptaccess = "sameDomain";
+	params.allowfullscreen = "true";
+	params.base = "{$pluginPath}audior/";
+
+	var attributes = {};
+	attributes.id = "Audior";
+	attributes.name = "Audior";
+	attributes.align = "middle";
+
+	swfobject.embedSWF("{$pluginPath}audior/Audior.swf", "audiorShortcodeContent", "600", "140", swfVersionStr, xiSwfUrlStr, flashvars, params, attributes);
+	swfobject.createCSS("#audiorShortcodeContent", "display:block;text-align:left;");
+</script>
+EOF;
+
+	$html .= '<div id="audiorShortcodeContent"><p>To view this page ensure that Adobe Flash Player version '.$flashVersion.' or greater is installed.</p><p><a href="http://www.adobe.com/go/getflashplayer" onclick="window.open(this.href); return false;">Get Adobe Flash Player</a></p></div>';
+
+	return $html;
+}
 
 function  deleteAudiorComment($commentId) {
 	global $wpdb;
@@ -297,6 +357,9 @@ function AudiorCommentsAdminConfing(){
 
 register_activation_hook(__FILE__,'AudiorCommentsInstall');
 add_action('admin_menu', 'AudiorCommentsAdminConfing');
+
+//audior shortcode
+add_shortcode('audior', 'audiorShortcode');
 
 //display audior in comment form
 //add_action('comment_form_logged_in_after', 'audior');
