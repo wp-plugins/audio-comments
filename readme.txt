@@ -2,7 +2,7 @@
 Tags: audio, comments, mp3, flash, moderated, audio comments
 Requires at least: 3.0.0
 Tested up to: 4.0.0
-Stable tag: 1.0
+Stable tag: 1.0.1
 Version : 1.0.1
 Contributors: radu.patron, naicuoctavian
 License: GPLv2 or later
@@ -19,6 +19,7 @@ With this plugin you will be able to leverage Audior to:
 * Review and moderate audio comments from your WordPress backend just like any other comment.
 * Control the max record limit/comment for each user role (you can change it from your WordPress admin area)
 * Change the looks, language file, sound wave and more with the 11+ Audior options exposed in the WordPress backend
+* Display Audior in your Posts and Pages using the shortcode [audior]
 
 Other features include:
 
