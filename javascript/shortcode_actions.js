@@ -10,7 +10,7 @@
  * 				as published by the Free Software Foundation, either version 3 of the License, or any later version.
  * 				You should have received a copy of the GNU General Public License along with this plugin.  If not, see <http://www.gnu.org/licenses/>.
  * @link		http://www.audior.ec
- * @version		1.1
+ * @version		1.0.1
  */
 
 function btSaveClick(recordDuration,recorderId){
