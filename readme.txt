@@ -3,7 +3,7 @@ Tags: audio, comments, mp3, flash, moderated, audio comments
 Requires at least: 3.0.0
 Tested up to: 4.0.0
 Stable tag: 1.0
-Version : 1.0
+Version : 1.0.1
 Contributors: radu.patron, naicuoctavian
 License: GPLv2 or later
 
