@@ -86,5 +86,5 @@ No, at the moment, recording audio in the browser using native HTML is in it's i
 == Changelog ==
 = 1.0 (18.02.2014) =
 * 1st release in WordPress plugin directory.
-= 1.0.1 (25.10.2014)
+= 1.0.1 (25.10.2014) =
 * added shortcode function. shortcode: [audior].
