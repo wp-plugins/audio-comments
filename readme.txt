@@ -1,7 +1,7 @@
 === Audio Comments Plugin ===
 Tags: audio, comments, mp3, flash, moderated, audio comments
 Requires at least: 3.0.0
-Tested up to: 4.0.0
+Tested up to: 4.2.2
 Stable tag: 1.0.1
 Version : 1.0.1
 Contributors: radu.patron, naicuoctavian
